@@ -320,11 +320,13 @@ body {
     background-image: linear-gradient(90deg, white 40%, $blue 40%);
     padding: 15px 0;
   }
+
   @include min-w($xl) {
     background-image: linear-gradient(90deg, white 50%, $blue 40%);
   }
 
   &.header--scroll {
+    padding: 0 5px;
     background-color: rgba(0, 0, 0, 0.4);
   }
 
