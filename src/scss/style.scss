@@ -326,7 +326,7 @@ body {
   }
 
   &.header--scroll {
-    padding: 0 5px;
+    padding: 5px 0;
     background-color: rgba(0, 0, 0, 0.4);
   }
 
@@ -1526,7 +1526,7 @@ body {
 
   &__thumb {
     display: none;
-    
+
     @include min-w($sm) {
       box-sizing: border-box;
       display: block;
