@@ -12,7 +12,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const burger = qOne(".burger"),
     menu = qOne(".menu"),
     headerOverlay = qOne(".header__overlay"),
-    overlays = qAll(".overlay");
+    overlays = qAll(".overlay"),
+    closePopupBtns = qAll(".closePopupBtn");
 
   burger.addEventListener("click", function () {
     this.classList.toggle("burger--close");
@@ -20,26 +21,31 @@ document.addEventListener("DOMContentLoaded", function () {
     headerOverlay.classList.toggle("overlay--active");
   });
 
-  function closePopap() {
-    const popap = qAll(".popup");
+  function closepopup() {
+    const popup = qAll(".popup");
     menu.classList.remove("header__menu--show");
     burger.classList.remove("burger--close");
     let count = 0;
-    while (count < popap.length || count < overlays.length) {
+    while (count < popup.length && count < overlays.length) {
       overlays[count].classList.remove("overlay--active");
-      // popap[count].classList.remove("popap--active");
+      popup[count].classList.remove("popup--active");
       count++;
     }
   }
 
-  menu.addEventListener("click", () => closePopap());
-  window.addEventListener("keydown", (e) => {
-    if (e.key == "Escape") closePopap();
-  });
+  for (let closePopupBtn of closePopupBtns) {
+    closePopupBtn.addEventListener("click", () => closepopup());
+  }
 
   for (const overlay of overlays) {
-    overlay.addEventListener("click", () => closePopap());
+    overlay.addEventListener("click", () => closepopup());
   }
+
+  menu.addEventListener("click", () => closepopup());
+  window.addEventListener("keydown", (e) => {
+    if (e.key == "Escape") closepopup();
+  });
+
 
   // скроллы хеадера
   const header = qOne(".header");
@@ -153,4 +159,14 @@ document.addEventListener("DOMContentLoaded", function () {
       }, animationTime / framesCount);
     });
   });
+
+  // кнопка обратной связи
+  const connectBtns = qAll(".connectBtn");
+
+  for (let connectBtn of connectBtns) {
+    connectBtn.addEventListener("click", () => {
+      qOne(".connect-form").classList.add("popup--active");
+      qOne(".overlay").classList.add("overlay--active");
+    });
+  }
 });

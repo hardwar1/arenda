@@ -64,7 +64,7 @@
           <span>mail@yandex.ru</span>
         </a>
 
-        <button class="header__btn btn" type="button">
+        <button class="header__btn btn connectBtn" type="button">
           Обратная связь
         </button>
       </address>
@@ -667,6 +667,35 @@
 </footer>
 
 <div class="overlay"></div>
+
+<div class="popup popup--active connect-form">
+  <div class="popup__inner">
+    <button class="popup__burger burger burger--close closePopupBtn" type="button">
+      <span class="burger__line"></span>
+      <span class="hide"> открыть/закрыть форму обратной связи</span>
+    </button>
+    <form action="connect-form__form">
+      <div class="connect-form__title">
+        Заказать звонок
+      </div>
+      <div class="connect-form__text">
+        <p>
+          Оставьте заявку и мы свяжемся с Вами в ближайшее время!
+        </p>
+      </div>
+      <label class="connect-form__label">
+        <span class="hide">Введите ваше имя</span>
+        <input class="connect-form__input" type="name" name="name" placeholder="Имя" required>
+      </label>
+      <label class="connect-form__label">
+        <span class="hide">Введите ваш телефон</span>
+        <input class="connect-form__input" type="tel" name="tel" placeholder="Телефон" required>
+      </label>
+
+      <button class="btn btn--big" type="submit">Отправить</button>
+    </form>
+  </div>
+</div>
   <script src="js/libs.min.js"></script>
 <script src="js/main.min.js"></script>
 </body>
