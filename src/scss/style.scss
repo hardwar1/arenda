@@ -1381,6 +1381,7 @@ body {
   max-width: 395px;
   box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
   color: #333333;
+
   &__img-wrap {
     position: relative;
     width: 100%;
@@ -1472,8 +1473,14 @@ body {
   &__flat-card {
     box-shadow: unset;
     max-width: unset;
+
     @include min-w($md) {
       display: flex;
+      margin-bottom: 50px;
+    }
+
+    @include min-w($xl) {
+      margin-bottom: 100px;
     }
   }
 
@@ -1532,7 +1539,7 @@ body {
   &__thumb-img {
     object-fit: cover;
     object-position: center;
-  
+
     cursor: pointer;
     transition: transform 0.3s;
 
@@ -1571,7 +1578,7 @@ body {
       &:focus {
         background-color: green;
       }
-      
+
       &:hover {
         &::after {
           font-size: 13px;
@@ -1622,6 +1629,14 @@ body {
     font-size: 14px;
     line-height: 1.2;
     margin-bottom: 15px;
+
+    @include min-w($md) {
+      font-size: 18px;
+    }
+
+    @include min-w($xl) {
+      font-size: 24px;
+    }
   }
 
   &__list {
