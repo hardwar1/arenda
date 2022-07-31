@@ -347,6 +347,7 @@ body {
       img {
         width: 136px;
         height: 54px;
+        transition: width 0.3s, height 0.3s;
       }
     }
   }
